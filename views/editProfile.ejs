@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css">
+  <title>Edit Profile</title>
+</head>
+<body>
+  <br>
+<%- include('./partials/navbar.ejs') %>
+<hr><br>
+<div class="container">
+<form action="/profile/<%= data.id %>/edit" method="post">
+  <label for="">First Name</label><br>
+  <input type="text" name="firstName" value="<%= data.firstName %>"> <br>
+
+  <label for="">Last Name</label> <br>
+  <input type="text" name="lastName" value="<%= data.lastName %>"> <br>
+  
+  <!-- <div class="form-floating"> -->
+    <p>Gender</p>
+    <select name="gender" class="form-floating">
+      <option selected="selected">--Select--</option>
+      <option value="Male">Male</option>
+      <option value="Female">Female</option>
+    </select>
+    <br>
+  <!-- <div class="invalid-feedback">
+  </div> -->
+
+  <label for="">Phone Number</label><br>
+  <input type="text" name="phoneNumber" value="<%=data.phoneNumber %> "><br><br>
+
+  <button>Update</button>
+</form>
+</div>
+</body>
+</html>
